@@ -673,7 +673,64 @@ int main() {
 */
 
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<iostream>
 
+using namespace std;
+struct E {
+		int number ;
+		int IsExport ;
+		char Type[100] ;
+		float price;
+	}buf[100];
+
+int main() {
+
+
+
+	 int num;
+	 scanf("%d " , &num);
+	for(int i = 0 ; i < num , i++ ){
+//----------
+	while(scanf("%d %d %s %6.2f" , &buf[i].number ,&buf.IsExport, buf.Type , &buf[i].price ) != EOF){
+		int tax = 0;
+		int sum = 0;
+
+		if(buf.Type == "book" || buf.Type == "chocolate" || buf.Type == "pill")
+		{
+			if(buf.IsExport == 1 )
+				tax = number * buf.price * 0.05 ;
+			else if(buf.IsExport == 0 )
+				tax = number * buf.price * 0;
+			else
+				printf("Error! IsExport1");
+
+		}
+		else if(buf.Type == "CD" || buf.Type == "perfume" )
+		{
+			if(buf.IsExport == 1 )
+				tax = number * buf.price * 0.15 ;
+			else if(buf.IsExport == 0 )
+				tax = number * buf.price * 0.10;
+			else
+				printf("Error! IsExport2");
+		}
+		else
+			printf("Error, Wrong Type!");
+
+		sum = number * buf.price + tax ;
+
+		//output
+		printf("%d %d %s %6.2f\n",buf.num ,buf.IsExport, buf.Type , sum );
+
+
+	}//end while
+
+	}
+	return 0;
+
+}
 
 
 
